@@ -73,6 +73,56 @@ app.innerHTML = `
       </div>
       <p class="video-caption">Technology &times; Beauty</p>
     </section>
+
+    <section class="con1" aria-label="JUVELOOK Volume introduction" data-node-id="228:7347">
+      <div class="con1-inner">
+        <div class="con1-top-panel" aria-hidden="true"></div>
+
+        <div class="con1-intro" data-node-id="228:7359">
+          <p class="con1-lead">Juvelook is a scientific approach<br />to skin rejuvenation providing<br />safe and effective you can trust.</p>
+          <h2>JUVELOOK<br />Volume</h2>
+        </div>
+
+        <p class="con1-technology" data-node-id="228:7375">VAIM’s key technology revolves around the creation of PDLLA microparticles.<br />Aqueous PDLLA solution is sprayed into a cold vat to produce our unique porous &amp; reticular microparticles.</p>
+
+        <div class="con1-bottle-stage" data-node-id="228:7349">
+          <img class="con1-orbit" src="/assets/con1-circle.svg" alt="" />
+          <div class="con1-bottle-wrap"><img class="con1-bottle" src="/assets/con1-bottle.png" alt="JUVELOOK Volume bottle, 200 mg per vial" /></div>
+          <img class="con1-plus con1-plus-tl" src="/assets/con1-plus.svg" alt="" />
+          <img class="con1-plus con1-plus-tr" src="/assets/con1-plus.svg" alt="" />
+          <img class="con1-plus con1-plus-bl" src="/assets/con1-plus.svg" alt="" />
+          <img class="con1-plus con1-plus-br" src="/assets/con1-plus.svg" alt="" />
+          <img class="con1-marker-line con1-marker-top" src="/assets/con1-line-1.svg" alt="" />
+          <img class="con1-marker-line con1-marker-bottom" src="/assets/con1-line.svg" alt="" />
+        </div>
+
+        <div class="con1-hud-label" data-node-id="267:2680">
+          <span><span class="con1-n">N.</span> <span class="con1-percent">%</span></span>
+          <span class="con1-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span>100%</span>
+        </div>
+
+        <figure class="con1-microparticle" data-node-id="228:7366">
+          <img src="/assets/con1-image-box-1.svg" alt="Microparticles viewed under magnification" />
+          <img class="con1-micro-indicator" src="/assets/con1-icon-circle.svg" alt="" />
+          <img class="con1-micro-return" src="/assets/con1-arrow.svg" alt="" />
+        </figure>
+
+        <div class="con1-effect" data-node-id="228:7362">
+          <p class="con1-effect-label">Effect of JUVELOOK</p>
+          <p>Induces the skin’s own collagen production to improve overall skin structure.<br />JUVELOOK promotes collagen production slowly and naturally from within the skin.</p>
+        </div>
+
+        <div class="con1-formula" data-node-id="228:7364">
+          <p>PDLLA 170mg<br />+ HA 30mg</p>
+          <img src="/assets/con1-detail.svg" alt="" />
+        </div>
+
+        <img class="con1-callout con1-callout-left" src="/assets/con1-line-3.svg" alt="" />
+        <img class="con1-callout con1-callout-bottom" src="/assets/con1-line-2.svg" alt="" />
+        <figure class="con1-molecule" data-node-id="228:7356"><img src="/assets/con1-image-box.svg" alt="Metallic molecular structure illustration" /></figure>
+      </div>
+    </section>
   </main>
 
 `
