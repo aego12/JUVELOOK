@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600&display=swap');
 
 :root {
   font-family: 'Urbanist', Arial, sans-serif;
@@ -15,13 +15,21 @@
 html, body, #app { width: 100%; min-width: 320px; min-height: 100%; margin: 0; }
 body { min-height: 100vh; }
 .page-shell { min-height: 100vh; }
+.hero-scroll-section { position: relative; }
+.hero-scroll-section.is-scroll-ready { height: 260svh; }
+.hero-sticky { position: sticky; top: 0; height: 100svh; }
+.site-header { position: absolute; z-index: 2; top: 31px; left: 96px; right: 96px; height: 62px; display: flex; align-items: center; justify-content: space-between; }
+.site-logo { width: 155px; height: 62px; display: flex; align-items: center; overflow: hidden; color: #000; font-size: 30px; font-weight: 300; line-height: 1.05; letter-spacing: -.055em; text-decoration: none; white-space: nowrap; }
+.site-nav { display: flex; align-items: center; gap: 32px; }
+.site-nav a { color: #000; font-size: 14px; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.site-nav a:hover { opacity: .62; }
 .hero { position: relative; display: grid; min-height: 100vh; min-height: 100svh; overflow: hidden; place-items: center; background: #fff; }
 .hero-title { width: min(35.6vw, 683px); min-width: 355px; display: flex; flex-direction: column; gap: clamp(9px, 1.56vw, 30px); position: relative; left: .5px; top: -.5px; }
-.title-row { min-height: clamp(51px, 5.1vw, 98px); display: flex; align-items: center; }
-.title-row h1 { margin: 0; font-size: clamp(68px, 7.61vw, 146px); font-weight: 300; line-height: 1; letter-spacing: -.055em; white-space: nowrap; }
+.title-row { height: clamp(51px, 5.1vw, 98px); display: flex; align-items: center; flex: 0 0 auto; }
+.title-row h1 { margin: 0; font-size: clamp(68px, 7.61vw, 146px); font-weight: 300; line-height: normal; letter-spacing: normal; white-space: nowrap; }
 .title-row-top { justify-content: flex-start; gap: clamp(14px, 2.34vw, 45px); }
 .title-row-bottom { justify-content: flex-end; gap: clamp(14px, 2.34vw, 45px); }
-.title-note { flex: 0 0 auto; height: 14px; margin: 0; border-bottom: 1px solid #111; font-size: clamp(6px, .625vw, 12px); font-weight: 400; line-height: 1; white-space: nowrap; }
+.title-note { flex: 0 0 auto; height: 14px; margin: 0; border-bottom: 1px solid #111; font-size: clamp(6px, .625vw, 12px); font-weight: 400; line-height: normal; letter-spacing: normal; white-space: nowrap; }
 .title-row-top .title-note { width: clamp(108px, 10.58vw, 203px); }
 .title-row-bottom .title-note { width: clamp(89px, 8.75vw, 168px); text-align: right; }
 .metrics { position: absolute; top: 36%; width: clamp(110px, 7.97vw, 153px); display: flex; flex-direction: column; }
@@ -29,17 +37,36 @@ body { min-height: 100vh; }
 .metrics-right { right: 5%; align-items: flex-end; }
 .metric { display: flex; flex-direction: column; align-items: flex-start; }
 .metrics-right .metric { align-items: flex-end; }
-.metric-value { margin: 0; font-size: clamp(22px, 2.19vw, 42px); font-weight: 300; line-height: 1; letter-spacing: -.045em; white-space: nowrap; }
+.metric-value { margin: 0; font-size: clamp(22px, 2.19vw, 42px); font-weight: 300; line-height: 1; letter-spacing: normal; white-space: nowrap; }
 .metric-label { display: inline-flex; align-items: center; gap: 5px; padding: 3px 0; border-bottom: 1px solid #353535; color: #353535; font-size: clamp(8px, .78vw, 15px); font-weight: 300; line-height: 1; text-decoration: none; white-space: nowrap; }
 .metric-label img { width: 9px; height: 9px; }
-.metrics-right .metric-label { flex-direction: row-reverse; }
+.metrics-right .metric-label { flex-direction: row; }
 .metric-divider { width: 23px; height: 1px; margin: clamp(17px, 2.1vw, 40px) 0 clamp(17px, 2.1vw, 40px); }
 .metrics-right .metric-divider { align-self: flex-end; }
+/* Figma: the 915px frame crosses the hero boundary, 285px above / 630px below. */
+.hero-metal-transition { position: relative; z-index: 1; height: 0; pointer-events: none; }
+.hero-image-box { position: absolute; left: 50%; top: max(-14.84375vw, -285px); width: min(52.552083vw, 1009px); aspect-ratio: 1009 / 915; transform: translate(calc(-50% - min(1.276042vw, 24.5px)), var(--metal-travel-y, 0px)); overflow: hidden; pointer-events: none; }
+.hero-image-box canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.video-section { position: relative; min-height: clamp(600px, 59.01vw, 1133px); overflow: hidden; isolation: isolate; background: #89949a; }
+.video-backdrop { position: absolute; z-index: -2; inset: -24px; background: url('/assets/video-poster-1.png') center 45% / cover no-repeat; filter: blur(20px); transform: scale(1.03); }
+.video-tint { position: absolute; z-index: -1; inset: 0; background: rgba(193, 206, 212, .5); backdrop-filter: blur(15px); }
+.video-box { position: absolute; top: 14.12%; left: 5%; width: 90%; height: 71.76%; background: #fff; }
+.video-poster { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-corner { position: absolute; width: 22px; height: 22px; pointer-events: none; }
+.corner-top-left { left: -11px; top: -11px; }
+.corner-top-right { right: -11px; top: -11px; }
+.corner-bottom-left { left: -11px; bottom: -11px; }
+.corner-bottom-right { right: -11px; bottom: -11px; }
+.video-caption { position: absolute; right: 7.55%; bottom: 7.8%; margin: 0; color: #fff; font-size: clamp(18px, 1.875vw, 36px); font-weight: 500; line-height: 1.5; letter-spacing: .01em; }
 
 @media (max-width: 680px) {
+  .site-header { top: 18px; left: 20px; right: 20px; height: auto; min-height: 62px; flex-wrap: wrap; }
+  .site-logo { width: 100%; height: 36px; font-size: 24px; }
+  .site-nav { width: 100%; justify-content: space-between; gap: 8px; }
+  .site-nav a { font-size: clamp(8px, 2.2vw, 12px); }
   .hero { min-height: 100svh; }
   .hero-title { width: 88vw; min-width: 0; gap: 12px; }
-  .title-row { min-height: auto; }
+  .title-row { height: auto; min-height: 0; }
   .title-row h1 { font-size: clamp(58px, 14vw, 92px); }
   .title-row-top, .title-row-bottom { gap: 10px; }
   .title-note { height: auto; padding-bottom: 3px; font-size: clamp(5px, 1.15vw, 8px); }
@@ -48,9 +75,13 @@ body { min-height: 100vh; }
   .metrics { top: auto; bottom: 13%; width: auto; }
   .metrics-left { left: 6%; }
   .metrics-right { right: 6%; }
+  .hero-image-box { top: -25.986125vw; width: 92vw; transform: translate(-50%, var(--metal-travel-y, 0px)); }
   .metric-value { font-size: clamp(21px, 6vw, 32px); }
   .metric-label { font-size: clamp(8px, 2vw, 10px); }
   .metric-divider { margin: 14px 0; }
+  .video-section { min-height: 78svh; }
+  .video-box { top: 20%; height: 58%; }
+  .video-caption { right: 6%; bottom: 10%; }
 }
 
 @media (max-width: 370px) {
