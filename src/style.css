@@ -58,17 +58,17 @@ body { min-height: 100vh; }
 .corner-bottom-left { left: -11px; bottom: -11px; }
 .corner-bottom-right { right: -11px; bottom: -11px; }
 .video-caption { position: absolute; right: 7.55%; bottom: 7.8%; margin: 0; color: #fff; font-size: clamp(18px, 1.875vw, 36px); font-weight: 500; line-height: 1.5; letter-spacing: .01em; }
-.con1 { position: relative; width: 100%; max-width: 1920px; margin: 0 auto; aspect-ratio: 1920 / 1764; overflow: hidden; container-type: inline-size; background: #fff; }
-.con1-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 1764px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; color: #050505; font-family: 'Urbanist', Arial, sans-serif; font-weight: 300; }
-.con1-top-panel { position: absolute; inset: 0 0 auto; height: 655px; background: #f2f2f2; }
+.con1 { position: relative; z-index: 2; width: 100%; max-width: 1920px; margin: 0 auto; aspect-ratio: 1920 / 1765; overflow: hidden; container-type: inline-size; background: transparent; }
+.con1-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 1765px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; background: linear-gradient(to bottom, #fff 0 1690px, transparent 1690px 1765px); color: #050505; font-family: 'Urbanist', Arial, sans-serif; font-weight: 300; }
+.con1-top-panel { position: absolute; inset: 0 auto auto 0; width: 1919px; height: 655px; background: #f2f2f2; }
 .con1-intro { position: absolute; left: 288px; top: 154px; width: 480px; }
-.con1-lead { margin: 0; font-size: 35px; line-height: 1.3; letter-spacing: -.025em; white-space: nowrap; }
-.con1-intro h2 { margin: 56px 0 0; font-size: 60px; font-weight: 300; line-height: 1.16; letter-spacing: -.035em; }
+.con1-lead { margin: 0; font-size: 35px; line-height: 1.3; white-space: nowrap; }
+.con1-intro h2 { position: absolute; left: 0; top: 187px; margin: 0; font-size: 60px; font-weight: 300; line-height: 1.16; }
 .con1-technology { position: absolute; left: 1336px; top: 159px; width: 242px; margin: 0; font-size: 12px; line-height: 1.3; }
 .con1-bottle-stage { position: absolute; left: 96px; top: 578px; width: 768px; height: 646px; }
 .con1-orbit { position: absolute; left: 134px; top: 59px; width: 493px; height: 493px; }
 .con1-bottle-wrap { position: absolute; left: 11px; top: -48px; width: 773px; height: 693px; display: grid; place-items: center; }
-.con1-bottle { display: block; width: 329.215px; height: 718.767px; object-fit: contain; transform: rotate(53.36deg); }
+.con1-bottle { display: block; width: 329.215px; height: 718.767px; transform: rotate(53.36deg); }
 .con1-plus { position: absolute; width: 22px; height: 22px; }
 .con1-plus-tl { left: -10px; top: -10px; }
 .con1-plus-tr { left: 756px; top: -10px; }
@@ -85,18 +85,165 @@ body { min-height: 100vh; }
 .con1-microparticle { position: absolute; left: 1248px; top: 459px; width: 384px; height: 278px; margin: 0; }
 .con1-microparticle > img:first-child { display: block; width: 384px; height: 278px; }
 .con1-micro-indicator { position: absolute; left: -1px; top: 316px; width: 48px; height: 48px; }
-.con1-micro-return { position: absolute; right: 0; top: 292px; width: 18px; height: 18px; }
-.con1-effect { position: absolute; left: 1056px; top: 942px; width: 480px; font-size: 27px; line-height: 1.3; letter-spacing: -.02em; }
+.con1-micro-indicator img { position: absolute; inset: -1.04%; display: block; }
+.con1-micro-return { position: absolute; right: 1px; top: 292px; width: 18px; height: 18px; display: grid; place-items: center; transform: rotate(-90deg); }
+.con1-micro-return img { display: block; width: 12.1315px; height: 13.0454px; }
+.con1-technology-mark { position: absolute; left: 1642px; top: 459px; width: 8px; height: 76px; }
+.con1-effect { position: absolute; left: 1056px; top: 942px; width: 480px; font-size: 27px; line-height: 1.3; }
 .con1-effect p { margin: 0; }
 .con1-effect .con1-effect-label { margin-bottom: 42px; font-size: 16px; }
 .con1-formula { position: absolute; left: 288px; top: 1318px; width: 354px; }
-.con1-formula p { margin: 0; font-size: 60px; line-height: 1.16; letter-spacing: -.035em; white-space: nowrap; }
-.con1-formula img { position: absolute; left: 317px; top: 112px; width: 57px; height: 57px; }
+.con1-formula p { position: relative; left: -3px; margin: 0; font-size: 60px; line-height: 1.16; white-space: nowrap; }
+.con1-formula img { position: absolute; left: 313px; top: 112px; width: 57px; height: 57px; }
 .con1-callout { position: absolute; }
 .con1-callout-left { left: 287px; top: 1120px; width: 57px; height: 180px; }
 .con1-callout-bottom { left: 772px; top: 1413px; width: 180px; height: 57px; }
 .con1-molecule { position: absolute; left: 768px; top: 1413px; width: 576px; height: 352px; margin: 0; }
 .con1-molecule img { display: block; width: 576px; height: 352px; }
+.con2 { position: relative; z-index: 1; width: 100%; max-width: 1920px; margin: max(-3.90625vw, -75px) auto 0; aspect-ratio: 1920 / 997; container-type: inline-size; }
+.con2-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 997px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; overflow: visible; background: #0061ae; color: #fff; font-family: 'Urbanist', Arial, sans-serif; font-weight: 300; }
+.con2-title { position: absolute; left: 191px; top: 99px; margin: 0; font-size: 31px; font-weight: 400; line-height: normal; }
+.con2-labels { position: absolute; left: 176px; top: 94px; width: 1289px; height: 761px; font-size: 24px; line-height: 1.16; white-space: nowrap; }
+.con2-label { position: absolute; }
+.con2-wrinkles { left: 630px; top: 52px; transform: translateX(-100%); text-align: right; }
+.con2-fine-lines { left: 963px; top: 85px; }
+.con2-skin-elasticity { left: 1132px; top: 344px; }
+.con2-large-pores { left: 1028px; top: 638px; }
+.con2-acne-scars { left: 693px; top: 733px; }
+.con2-skin-texture { left: 493px; top: 577px; transform: translateX(-100%); text-align: right; }
+.con2-skin-rejuvenation { left: 455px; top: 303px; transform: translateX(-100%); text-align: right; }
+.con2-circle { position: absolute; left: 667px; top: 168px; width: 585px; height: 611px; }
+.con2-curve { position: absolute; }
+.con2-curve img { position: absolute; display: block; }
+.con2-curve-a { left: 0; top: 67px; width: 281px; height: 544.966px; }
+.con2-curve-a img { inset: 0 0 0 -0.18%; }
+.con2-curve-b { left: 164px; top: 0; width: 422px; height: 611px; }
+.con2-curve-b img { inset: 0 -0.12% 0 -0.16%; }
+.con2-point { position: absolute; width: 8px; height: 8px; background: #fff; }
+.con2-point-1 { left: 431px; top: 44px; }
+.con2-point-2 { left: 574px; top: 268px; }
+.con2-point-3 { left: 488px; top: 520px; }
+.con2-point-4 { left: 247px; top: 600px; }
+.con2-point-5 { left: 40px; top: 467px; }
+.con2-point-6 { left: 16px; top: 234px; }
+.con2-point-7 { left: 158px; top: 15px; }
+.con2-value { position: absolute; left: 951.5px; top: 452px; display: flex; align-items: baseline; transform: translateX(-50%); margin: 0; color: #fff; line-height: 1.16; white-space: pre; }
+.con2-value-number { font-size: 72px; }
+.con2-value-percent { font-size: 22px; }
+.con2-value-space { font-size: 43px; }
+.con2-value-name { font-size: 34px; }
+.con2-trademark { position: absolute; left: 1051px; top: 481px; transform: translateX(-50%); font-size: 15px; line-height: 1.16; }
+.con2-message { position: absolute; z-index: 1; left: 480.5px; top: 914px; width: 959px; height: 166px; background: rgba(198, 211, 228, .7); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); }
+.con2-message p { position: absolute; left: 50%; top: 53px; transform: translateX(-50%); margin: 0; color: #000; font-size: 48px; font-weight: 300; line-height: normal; white-space: nowrap; }
+.con2-plus { position: absolute; width: 22px; height: 22px; }
+.con2-plus-tl { left: -11px; top: -11px; }
+.con2-plus-tr { left: 948px; top: -11px; }
+.con2-plus-bl { left: -11px; top: 155px; }
+.con2-plus-br { left: 948px; top: 155px; }
+.con3 { position: relative; z-index: 0; width: 100%; max-width: 1920px; margin: min(19.583333vw, 376px) auto 0; aspect-ratio: 1920 / 3076; container-type: inline-size; background: #fff; }
+.con3-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 3076px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; overflow: hidden; background: #fff; color: #000; font-family: 'Urbanist', Arial, sans-serif; font-weight: 300; }
+.con3-heading { position: absolute; left: 79px; top: 84px; margin: 0; font-size: 120px; font-weight: 300; line-height: normal; white-space: nowrap; }
+.con3-lineup-heading { position: absolute; left: 1436px; top: 90px; margin: 0; font-size: 70px; font-weight: 300; line-height: 1.16; white-space: nowrap; }
+.con3-intro { position: absolute; left: 901px; top: 102px; width: 361px; display: flex; flex-direction: column; align-items: flex-end; }
+.con3-intro > p { margin: 0; font-size: 16px; font-weight: 300; line-height: 1.3; text-align: right; white-space: pre; }
+.con3-all { width: 100%; display: flex; justify-content: flex-end; align-items: center; gap: 4px; font-size: 16px; line-height: 1.3; }
+.con3-all-arrow { display: flex; width: 8px; height: 8px; align-items: center; justify-content: center; transform: rotate(180deg); }
+.con3-all-arrow img { display: block; width: 8px; height: 8px; }
+.con3-divider { position: absolute; left: 1346px; top: 106px; width: 0; height: 2864px; }
+.con3-divider img { position: absolute; left: -1432px; top: 1431.65px; display: block; width: 2864px; height: .7px; transform: rotate(90deg); transform-origin: center; }
+.con3-lineup { position: absolute; left: 1442px; top: 294px; width: 383px; display: flex; flex-direction: column; gap: 60px; }
+.con3-product { width: 100%; display: flex; flex-direction: column; gap: 27px; }
+.con3-product-image { position: relative; flex: 0 0 auto; width: 100%; height: 418px; background: #f2f2f2; }
+.con3-product-image > img:first-child { position: absolute; left: 0; top: 0; display: block; }
+.con3-corner, .con3-product-corner { position: absolute; z-index: 1; width: 14px; height: 14px; pointer-events: none; }
+.con3-corner img, .con3-product-corner img { display: block; width: 14px; height: 14px; }
+.con3-corner-tl, .con3-product-corner-tl { left: -1px; top: -1px; transform: rotate(90deg); }
+.con3-corner-tr, .con3-product-corner-tr { right: -1px; top: -1px; transform: rotate(180deg); }
+.con3-corner-bl, .con3-product-corner-bl { left: -1px; bottom: -1px; }
+.con3-corner-br, .con3-product-corner-br { right: -1px; bottom: -1px; transform: rotate(-90deg); }
+.con3-product-caption { font-size: 18px; line-height: 1.1; }
+.con3-product-caption p { margin: 0; }
+.con3-product-caption p:first-child { font-weight: 400; }
+.con3-gallery { position: absolute; left: 95px; top: 295px; width: 1178px; height: 2659px; }
+.con3-gallery-card { position: absolute; display: flex; flex-direction: column; gap: 27px; }
+.con3-gallery-image { position: relative; flex: 0 0 auto; background: #f2f2f2; }
+.con3-photo-crop { position: absolute; inset: 0; display: block; overflow: hidden; }
+.con3-photo-crop > img { position: absolute; display: block; }
+.con3-gallery-caption { font-size: 18px; line-height: 1.1; }
+.con3-gallery-caption p { margin: 0; }
+.con3-gallery-caption p:first-child { font-weight: 400; }
+.con3-structure-card { left: 0; top: 0; width: 383px; }
+.con3-structure-image { width: 383px; height: 575px; }
+.con3-structure-image .con3-photo-crop > img { left: 0; top: 0; width: 384px; height: 575px; transform: scaleX(-1); }
+.con3-spherical-card { left: 578px; top: 169px; width: 578px; }
+.con3-spherical-image { width: 578px; height: 718px; }
+.con3-spherical-image .con3-photo-crop > img { left: 0; top: 0; width: 578px; height: 1026px; object-fit: cover; }
+.con3-porous-card { left: 193px; top: 971px; width: 383px; }
+.con3-porous-image { width: 383px; height: 559px; }
+.con3-porous-image .con3-photo-crop > img { left: 0; top: 0; width: 382px; height: 678px; object-fit: cover; }
+.con3-network-card { left: 768px; top: 1218px; width: 383px; }
+.con3-network-image { width: 383px; height: 586px; background: #fff; }
+.con3-network-image .con3-photo-crop > img { left: -2px; top: 0; width: 409px; height: 726px; object-fit: cover; }
+.con3-corn-card { left: 1px; top: 1885px; width: 288px; }
+.con3-corn-image { width: 288px; height: 500px; background: #fff; }
+.con3-corn-image .con3-photo-crop > img { left: -93px; top: -91px; width: 539px; height: 809px; object-fit: cover; }
+.con3-adhesion-card { left: 576px; top: 2156px; width: 289px; }
+.con3-adhesion-image { width: 289px; height: 436px; background: #fff; }
+.con3-adhesion-image .con3-photo-crop::before { content: ''; position: absolute; left: -2px; top: -2px; width: 292px; height: 440px; background: #f2f2f2; }
+.con3-adhesion-image .con3-photo-crop > img { left: -2px; top: -2px; width: 341px; height: 455px; transform: scaleX(-1); }
+.con3-top-mini { position: absolute; left: 1577px; top: 27px; display: flex; align-items: center; gap: 22px; font-size: 16px; line-height: normal; white-space: nowrap; }
+.con3-mini-divider { position: relative; display: block; width: 0; height: 15px; }
+.con3-mini-divider img { position: absolute; left: -7.5px; top: 7px; display: block; width: 15px; height: 1px; transform: rotate(-90deg); }
+.con3-mini-rule { position: relative; display: block; width: 50px; height: 1px; }
+.con3-mini-rule img { position: absolute; inset: 0; display: block; }
+
+.con4 { position: relative; z-index: 0; width: 100%; max-width: 1920px; margin: min(9.53125vw, 183px) auto 0; aspect-ratio: 1920 / 654; container-type: inline-size; background: #0061ae; overflow: hidden; }
+.con4-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 654px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; overflow: hidden; background: #0061ae; color: #fff; font-family: 'Urbanist', Arial, sans-serif; font-weight: 300; }
+.con4-heading { position: absolute; left: 388px; top: 135px; margin: 0; font-size: 120px; font-weight: 300; line-height: 1; white-space: nowrap; }
+.con4-copy { position: absolute; left: 388px; top: 297px; width: 703px; margin: 0; font-size: 18px; font-weight: 400; line-height: 1.4; white-space: nowrap; }
+.con4-more { position: absolute; left: 390px; top: 419px; display: flex; align-items: center; gap: 19px; color: #fff; font-size: 18px; line-height: 1.4; text-decoration: none; }
+.con4-button { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #fff; }
+.con4-button img { display: block; width: 20px; height: 20px; }
+.con4-stats { position: absolute; inset: 0; }
+.con4-stat { position: absolute; top: 348px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; white-space: nowrap; }
+.con4-stat p { margin: 0; font-size: 62px; line-height: 1; }
+.con4-stat span { font-size: 28px; line-height: 1.4; }
+.con4-stat-countries { left: 1388px; width: 125px; }
+.con4-stat-clinics { left: 1474px; width: 145px; }
+.con4-stat-award { left: 1634px; width: 98px; }
+.con4-bottle { position: absolute; pointer-events: none; mix-blend-mode: hard-light; object-fit: contain; }
+.con4-bottle-small { left: 1165px; top: 307px; width: 276px; height: 289px; transform: rotate(37.71deg); opacity: .9; }
+.con4-bottle-large { left: 1680px; top: 311px; width: 687px; height: 474px; transform: rotate(90.51deg); }
+
+.site-footer { position: relative; width: 100%; max-width: 1920px; height: min(57.552083vw, 1105px); min-height: 560px; margin: 0 auto; container-type: inline-size; background: #fff; color: #050505; font-family: 'Urbanist', Arial, sans-serif; }
+.footer-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 1105px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; }
+.footer-column { position: absolute; top: 185px; display: flex; flex-direction: column; align-items: flex-start; }
+.footer-column > h2 { width: 100%; margin: 0; font-size: 11px; font-weight: 600; line-height: 1.2; }
+.footer-office { left: 96px; width: 289px; gap: 106px; }
+.footer-navigation { left: 480px; width: 301px; gap: 107px; }
+.footer-legal { left: 864px; width: 229px; gap: 105px; }
+.footer-brand { left: 1199px; top: 187px; width: 412px; gap: 68px; }
+.footer-details { width: 100%; display: flex; flex-direction: column; gap: 26px; }
+.footer-details section { display: flex; flex-direction: column; gap: 16px; }
+.footer-details h3 { margin: 0; font-size: 18px; font-weight: 300; line-height: 1.1; white-space: nowrap; }
+.footer-details p { margin: 0; font-size: 12px; font-weight: 300; line-height: 1.3; white-space: nowrap; }
+.footer-brand-name { margin: 0; font-size: 64px; font-weight: 300; line-height: 1.05; white-space: nowrap; }
+.footer-follow { position: absolute; left: 96px; top: 833px; margin: 0; font-size: 10px; line-height: 1.05; }
+.footer-socials { position: absolute; left: 384px; top: 834px; display: flex; align-items: center; gap: 50px; font-size: 10px; font-weight: 600; line-height: 1.05; }
+.footer-socials a, .footer-family a { color: inherit; text-decoration: none; }
+.footer-newsletter { position: absolute; left: 1104px; top: 753px; width: 672px; height: 273px; background: rgba(198,211,228,.7); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); }
+.footer-newsletter label { position: absolute; left: 111px; top: 82px; font-size: 12px; font-weight: 300; line-height: 1.05; white-space: nowrap; }
+.footer-newsletter input { position: absolute; left: 96px; top: 104px; width: 240px; height: 20px; border: 0; border-bottom: 1px solid #111; background: transparent; outline: none; }
+.footer-newsletter button { position: absolute; left: 389px; top: 79px; width: 18px; height: 18px; padding: 0; border: 0; background: transparent; transform: rotate(180deg); cursor: pointer; }
+.footer-newsletter button img { display: block; width: 8px; height: 8px; }
+.footer-plus { position: absolute; width: 22px; height: 22px; }
+.footer-plus-tl { left: -11px; top: -11px; }
+.footer-plus-tr { right: -11px; top: -11px; }
+.footer-plus-bl { left: -11px; bottom: -11px; }
+.footer-plus-br { right: -11px; bottom: -11px; }
+.footer-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: min(8.28125vw, 159px); min-height: 64px; background: #0061ae; }
+.footer-family { position: absolute; left: max(5vw, calc((100% - 1728px)/2)); top: 50%; display: flex; align-items: center; gap: 0; transform: translateY(-50%); color: #fff; font-size: 10px; font-weight: 600; line-height: 1.05; }
+.footer-family span { width: 64px; height: 1px; margin: 0 16px; background: #fff; }
 
 @media (max-width: 680px) {
   .site-header { top: 18px; left: 20px; right: 20px; height: auto; min-height: 62px; flex-wrap: wrap; }
@@ -121,34 +268,6 @@ body { min-height: 100vh; }
   .video-section { min-height: 78svh; }
   .video-box { top: 20%; height: 58%; }
   .video-caption { right: 6%; bottom: 10%; }
-  .con1 { aspect-ratio: auto; max-width: none; height: auto; min-height: 0; overflow: hidden; }
-  .con1-inner { position: relative; inset: auto; width: 100%; height: auto; transform: none; display: flex; flex-direction: column; padding: 36px 20px 56px; gap: 30px; }
-  .con1-top-panel { height: 410px; }
-  .con1-intro, .con1-technology, .con1-bottle-stage, .con1-hud-label, .con1-microparticle, .con1-effect, .con1-formula, .con1-callout, .con1-molecule { position: relative; left: auto; top: auto; right: auto; bottom: auto; }
-  .con1-intro { width: 100%; order: 0; }
-  .con1-lead { font-size: clamp(19px, 5.2vw, 25px); line-height: 1.35; white-space: normal; }
-  .con1-intro h2 { margin-top: 28px; font-size: clamp(42px, 11vw, 54px); }
-  .con1-technology { order: 1; width: min(100%, 360px); font-size: 13px; }
-  .con1-bottle-stage { order: 2; align-self: center; width: min(100%, 420px); height: 360px; }
-  .con1-orbit { left: 50%; top: 24px; width: min(70vw, 300px); height: auto; transform: translateX(-50%); }
-  .con1-bottle-wrap { left: 50%; top: 0; width: 100%; height: 100%; transform: translateX(-50%) scale(.54); }
-  .con1-bottle { width: 250px; height: 520px; }
-  .con1-plus-tr, .con1-plus-br { right: -8px; left: auto; }
-  .con1-plus-tl, .con1-plus-tr { top: 0; }
-  .con1-plus-bl, .con1-plus-br { top: auto; bottom: 0; }
-  .con1-marker-line, .con1-hud-label, .con1-callout { display: none; }
-  .con1-microparticle { order: 3; width: 100%; height: auto; }
-  .con1-microparticle > img:first-child { width: 100%; height: auto; }
-  .con1-microparticle { margin-bottom: 22px; }
-  .con1-micro-indicator { left: 0; top: auto; bottom: -48px; }
-  .con1-micro-return { top: auto; right: 0; bottom: -36px; }
-  .con1-effect { order: 4; width: 100%; font-size: 20px; line-height: 1.45; }
-  .con1-effect .con1-effect-label { margin-bottom: 22px; font-size: 14px; }
-  .con1-formula { order: 5; width: 100%; }
-  .con1-formula p { font-size: clamp(40px, 11vw, 52px); }
-  .con1-formula img { left: auto; right: 5px; top: 50%; width: 48px; height: 48px; transform: translateY(-50%); }
-  .con1-molecule { order: 6; width: 100%; height: auto; }
-  .con1-molecule img { width: 100%; height: auto; }
 }
 
 @media (max-width: 370px) {

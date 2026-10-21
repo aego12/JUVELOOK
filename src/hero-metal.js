@@ -1,4 +1,3 @@
-import { Application } from '@splinetool/runtime'
 import { mountHeroScroll } from './hero-scroll.js'
 
 // Original scene bytes from the user's glassknotvortex public page.
@@ -16,6 +15,7 @@ export function mountHeroMetal(host) {
 
   async function load() {
     try {
+      const { Application } = await import('@splinetool/runtime')
       const response = await fetch(sceneUrl, { signal: abort.signal })
       if (!response.ok) throw new Error(`Spline scene: ${response.status}`)
       const bytes = await response.arrayBuffer()
