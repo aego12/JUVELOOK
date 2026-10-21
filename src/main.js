@@ -247,16 +247,16 @@ app.innerHTML = `
 
     <section class="con4" id="about" aria-label="About JUVELOOK" data-node-id="300:8630">
       <div class="con4-inner">
+        <div class="con4-vial-stage con4-vial-stage-small" data-node-id="300:8632"><div class="con4-vial-rotated"><img src="/assets/con4-vial-small.png" alt="" /></div></div>
+        <div class="con4-vial-stage con4-vial-stage-large" data-node-id="300:8633"><div class="con4-vial-rotated"><img src="/assets/con4-vial-large.png" alt="" /></div></div>
         <h2 class="con4-heading" data-node-id="300:8636">ABOUT</h2>
-        <p class="con4-copy" data-node-id="300:8637">JUVELOOK is an advanced collagen biostimulator designed to enhance skin quality.<br />Its core technology combines precision-engineered PDLLA™ microparticles with HA.<br />Spherical and porous particles are engineered with a controlled microstructure.</p>
-        <a class="con4-more" href="#contact" data-node-id="300:8635">More<span class="con4-button" data-node-id="300:8638"><img src="/assets/con4-arrow.svg" alt="" /></span></a>
+        <p class="con4-copy" data-node-id="300:8637">JUVELOOK is an advanced collagen biostimulator designed to enhance skin quality.<br /> Its core technology combines precision-engineered PDLLA™ microparticles with HA.<br /> Spherical and porous particles are engineered with a controlled microstructure.</p>
+        <a class="con4-more" href="#contact" data-node-id="300:8635"><span class="con4-more-label">More</span><span class="con4-button" data-node-id="300:8638"><img src="/assets/con4-arrow.svg" alt="" /></span></a>
         <div class="con4-stats" aria-label="JUVELOOK global impact">
           <div class="con4-stat con4-stat-countries" data-node-id="300:8641"><p>30+</p><span>Global Countries</span></div>
           <div class="con4-stat con4-stat-clinics" data-node-id="300:8644"><p>1,200+</p><span>Clinics</span></div>
           <div class="con4-stat con4-stat-award" data-node-id="300:8647"><p>2022</p><span>Award</span></div>
         </div>
-        <img class="con4-bottle con4-bottle-small" src="/assets/con1-bottle.png" alt="JUVELOOK product vial" data-node-id="300:8632" />
-        <img class="con4-bottle con4-bottle-large" src="/assets/con1-bottle.png" alt="JUVELOOK product vial detail" data-node-id="300:8633" />
       </div>
     </section>
 
@@ -290,16 +290,16 @@ app.innerHTML = `
         <p class="footer-follow">FOLLOW US</p>
         <nav class="footer-socials" aria-label="Social media" data-node-id="228:7232"><a href="#facebook">FACEBOOK</a><a href="#instagram">INSTAGRAM</a><a href="#x">X</a><a href="#behance">BEHANCE</a></nav>
         <form class="footer-newsletter" data-node-id="228:7237" action="#contact">
-          <label for="footer-email">Give an email, get the newsletter.</label>
+          <div class="footer-newsletter-prompt" data-node-id="228:7239"><label for="footer-email">Give an email, get the newsletter.</label><button type="submit" aria-label="Subscribe"><img src="/assets/footer-arrow.svg" alt="" /></button></div>
           <input id="footer-email" type="email" aria-label="Email address" />
-          <button type="submit" aria-label="Subscribe"><img src="/assets/con4-arrow.svg" alt="" /></button>
+          <img class="footer-email-line" src="/assets/footer-email-line.svg" alt="" />
           <img class="footer-plus footer-plus-tl" src="/assets/con1-plus.svg" alt="" />
           <img class="footer-plus footer-plus-tr" src="/assets/con1-plus.svg" alt="" />
           <img class="footer-plus footer-plus-bl" src="/assets/con1-plus.svg" alt="" />
           <img class="footer-plus footer-plus-br" src="/assets/con1-plus.svg" alt="" />
         </form>
       </div>
-      <div class="footer-bottom"><div class="footer-family"><a href="#family-site">FAMILY SITE</a><span></span><a href="#julia-academy">JULIA ACADEMY</a></div></div>
+      <div class="footer-bottom" data-node-id="228:7206"><div class="footer-bottom-inner"><div class="footer-family" data-node-id="228:7207"><a href="#family-site">FAMILY SITE</a><img src="/assets/footer-family-line.svg" alt="" /><a href="#julia-academy">JULIA ACADEMY</a></div></div></div>
     </footer>
   </main>
 

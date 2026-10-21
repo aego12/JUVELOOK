@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600&display=swap');
 
+@font-face { font-family: 'Urbanist Local'; src: url('/assets/urbanist-300.ttf') format('truetype'); font-style: normal; font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Urbanist Local'; src: url('/assets/urbanist-400.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Urbanist Local'; src: url('/assets/urbanist-600.ttf') format('truetype'); font-style: normal; font-weight: 600; font-display: swap; }
+
 :root {
   font-family: 'Urbanist', Arial, sans-serif;
   color: #000;
@@ -198,52 +202,64 @@ body { min-height: 100vh; }
 .con3-mini-rule img { position: absolute; inset: 0; display: block; }
 
 .con4 { position: relative; z-index: 0; width: 100%; max-width: 1920px; margin: min(9.53125vw, 183px) auto 0; aspect-ratio: 1920 / 654; container-type: inline-size; background: #0061ae; overflow: hidden; }
-.con4-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 654px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; overflow: hidden; background: #0061ae; color: #fff; font-family: 'Urbanist', Arial, sans-serif; font-weight: 300; }
-.con4-heading { position: absolute; left: 388px; top: 135px; margin: 0; font-size: 120px; font-weight: 300; line-height: 1; white-space: nowrap; }
-.con4-copy { position: absolute; left: 388px; top: 297px; width: 703px; margin: 0; font-size: 18px; font-weight: 400; line-height: 1.4; white-space: nowrap; }
-.con4-more { position: absolute; left: 390px; top: 419px; display: flex; align-items: center; gap: 19px; color: #fff; font-size: 18px; line-height: 1.4; text-decoration: none; }
-.con4-button { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #fff; }
+.con4-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 654px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; overflow: hidden; background: #0061ae; color: #fff; font-family: 'Urbanist Local', Arial, sans-serif; font-weight: 300; }
+.con4-heading { position: absolute; left: 388px; top: 161px; transform: translateX(-50%); margin: 0; font-size: 120px; font-weight: 300; line-height: 1; white-space: nowrap; }
+.con4-copy { position: absolute; left: 198px; top: 322px; width: 703px; margin: 0; font-size: 18px; font-weight: 400; line-height: 1.4; white-space: pre-wrap; }
+.con4-more { position: absolute; left: 195px; top: 429px; width: 85px; height: 30px; color: #fff; font-size: 18px; font-weight: 300; line-height: 1.4; text-decoration: none; }
+.con4-more-label { position: absolute; left: 0; top: 2px; }
+.con4-button { position: absolute; left: 55px; top: 0; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #fff; }
 .con4-button img { display: block; width: 20px; height: 20px; }
-.con4-stats { position: absolute; inset: 0; }
-.con4-stat { position: absolute; top: 348px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; white-space: nowrap; }
+.con4-stats { position: absolute; inset: 0; pointer-events: none; }
+.con4-stat { position: absolute; top: 311.9px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; white-space: nowrap; }
 .con4-stat p { margin: 0; font-size: 62px; line-height: 1; }
 .con4-stat span { font-size: 28px; line-height: 1.4; }
-.con4-stat-countries { left: 1388px; width: 125px; }
-.con4-stat-clinics { left: 1474px; width: 145px; }
-.con4-stat-award { left: 1634px; width: 98px; }
-.con4-bottle { position: absolute; pointer-events: none; mix-blend-mode: hard-light; object-fit: contain; }
-.con4-bottle-small { left: 1165px; top: 307px; width: 276px; height: 289px; transform: rotate(37.71deg); opacity: .9; }
-.con4-bottle-large { left: 1680px; top: 311px; width: 687px; height: 474px; transform: rotate(90.51deg); }
+.con4-stat-countries { left: 1186px; width: 125px; }
+.con4-stat-clinics { left: 1414px; width: 98px; }
+.con4-stat-award { left: 1630px; width: 98px; }
+.con4-vial-stage { position: absolute; display: flex; align-items: center; justify-content: center; mix-blend-mode: hard-light; pointer-events: none; }
+.con4-vial-stage-small { left: 1165.6px; top: 307.87px; width: 275.457px; height: 288.949px; }
+.con4-vial-stage-large { left: 1680.32px; top: 311.17px; width: 686.941px; height: 473.908px; }
+.con4-vial-rotated { position: relative; flex: none; }
+.con4-vial-stage-small .con4-vial-rotated { width: 163.592px; height: 238.757px; transform: rotate(37.71deg); }
+.con4-vial-stage-large .con4-vial-rotated { width: 467.846px; height: 682.802px; transform: rotate(90.51deg); }
+.con4-vial-rotated img { display: block; width: 100%; height: 100%; }
+.con4-vial-stage-small img { opacity: .9; }
 
-.site-footer { position: relative; width: 100%; max-width: 1920px; height: min(57.552083vw, 1105px); min-height: 560px; margin: 0 auto; container-type: inline-size; background: #fff; color: #050505; font-family: 'Urbanist', Arial, sans-serif; }
-.footer-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 1105px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; }
+.site-footer { position: relative; width: 100%; max-width: 1920px; aspect-ratio: 1920 / 1105; margin: 0 auto; container-type: inline-size; background: #fff; color: #050505; font-family: 'Urbanist Local', Arial, sans-serif; }
+.footer-inner { position: absolute; z-index: 1; inset: 0 auto auto 0; width: 1920px; height: 1105px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; }
 .footer-column { position: absolute; top: 185px; display: flex; flex-direction: column; align-items: flex-start; }
 .footer-column > h2 { width: 100%; margin: 0; font-size: 11px; font-weight: 600; line-height: 1.2; }
-.footer-office { left: 96px; width: 289px; gap: 106px; }
+.footer-office { left: 96px; top: 186px; width: 289px; gap: 106px; }
 .footer-navigation { left: 480px; width: 301px; gap: 107px; }
-.footer-legal { left: 864px; width: 229px; gap: 105px; }
+.footer-legal { left: 864px; top: 186px; width: 229px; gap: 105px; }
 .footer-brand { left: 1199px; top: 187px; width: 412px; gap: 68px; }
 .footer-details { width: 100%; display: flex; flex-direction: column; gap: 26px; }
 .footer-details section { display: flex; flex-direction: column; gap: 16px; }
-.footer-details h3 { margin: 0; font-size: 18px; font-weight: 300; line-height: 1.1; white-space: nowrap; }
+.footer-details h3 { margin: 0; font-size: 18px; font-weight: 300; line-height: normal; white-space: nowrap; }
 .footer-details p { margin: 0; font-size: 12px; font-weight: 300; line-height: 1.3; white-space: nowrap; }
 .footer-brand-name { margin: 0; font-size: 64px; font-weight: 300; line-height: 1.05; white-space: nowrap; }
 .footer-follow { position: absolute; left: 96px; top: 833px; margin: 0; font-size: 10px; line-height: 1.05; }
 .footer-socials { position: absolute; left: 384px; top: 834px; display: flex; align-items: center; gap: 50px; font-size: 10px; font-weight: 600; line-height: 1.05; }
 .footer-socials a, .footer-family a { color: inherit; text-decoration: none; }
 .footer-newsletter { position: absolute; left: 1104px; top: 753px; width: 672px; height: 273px; background: rgba(198,211,228,.7); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); }
-.footer-newsletter label { position: absolute; left: 111px; top: 82px; font-size: 12px; font-weight: 300; line-height: 1.05; white-space: nowrap; }
-.footer-newsletter input { position: absolute; left: 96px; top: 104px; width: 240px; height: 20px; border: 0; border-bottom: 1px solid #111; background: transparent; outline: none; }
-.footer-newsletter button { position: absolute; left: 389px; top: 79px; width: 18px; height: 18px; padding: 0; border: 0; background: transparent; transform: rotate(180deg); cursor: pointer; }
-.footer-newsletter button img { display: block; width: 8px; height: 8px; }
+.footer-newsletter-prompt { position: absolute; left: 111px; top: 82px; display: flex; align-items: center; gap: 39px; }
+.footer-newsletter label { font-size: 12px; font-weight: 300; line-height: 1.05; white-space: nowrap; }
+.footer-newsletter input { position: absolute; left: 96px; top: 94px; width: 240px; height: 20px; border: 0; background: transparent; color: #000; font: 300 12px 'Urbanist Local', Arial, sans-serif; outline: none; }
+.footer-email-line { position: absolute; left: 96px; top: 114px; display: block; width: 240px; height: 1px; }
+.footer-newsletter button { width: 8px; height: 8px; flex: none; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.footer-newsletter button img { display: block; width: 8px; height: 8px; transform: rotate(180deg); }
 .footer-plus { position: absolute; width: 22px; height: 22px; }
 .footer-plus-tl { left: -11px; top: -11px; }
-.footer-plus-tr { right: -11px; top: -11px; }
-.footer-plus-bl { left: -11px; bottom: -11px; }
-.footer-plus-br { right: -11px; bottom: -11px; }
-.footer-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: min(8.28125vw, 159px); min-height: 64px; background: #0061ae; }
-.footer-family { position: absolute; left: max(5vw, calc((100% - 1728px)/2)); top: 50%; display: flex; align-items: center; gap: 0; transform: translateY(-50%); color: #fff; font-size: 10px; font-weight: 600; line-height: 1.05; }
-.footer-family span { width: 64px; height: 1px; margin: 0 16px; background: #fff; }
+.footer-plus-tr { right: -12px; top: -11px; }
+.footer-plus-bl { left: -11px; bottom: -12px; }
+.footer-plus-br { right: -12px; bottom: -12px; }
+.footer-bottom { position: absolute; z-index: 0; left: 0; right: 0; bottom: 0; aspect-ratio: 1920 / 159; container-type: inline-size; overflow: hidden; background: #0061ae; }
+.footer-bottom-inner { position: absolute; inset: 0 auto auto 0; width: 1920px; height: 159px; transform: scale(calc(100cqw / 1920)); transform-origin: top left; }
+.footer-family { position: absolute; left: 96px; top: 76px; width: 229px; height: 10px; color: #fff; font-size: 10px; font-weight: 600; line-height: 1.05; }
+.footer-family a, .footer-family img { position: absolute; top: 0; white-space: nowrap; }
+.footer-family a:first-child { left: 0; }
+.footer-family img { left: 73px; top: 5px; display: block; width: 64px; height: 1px; }
+.footer-family a:last-child { left: 153px; }
 
 @media (max-width: 680px) {
   .site-header { top: 18px; left: 20px; right: 20px; height: auto; min-height: 62px; flex-wrap: wrap; }
