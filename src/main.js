@@ -1,5 +1,10 @@
 import './style.css'
 import { mountHeroMetal } from './hero-metal.js'
+import { mountCon1Motion } from './con1-motion.js'
+import { mountCon3Motion } from './con3-motion.js'
+import { mountCon3Lineup } from './con3-lineup.js'
+import { mountCon4Stats } from './con4-stats.js'
+import { mountHeroMetrics } from './hero-metrics.js'
 
 const app = document.querySelector('#app')
 
@@ -18,14 +23,14 @@ const con3Corners = `
 `
 
 const con3Products = [
-  ['con3-image-a.svg', 'JUVELOOK', 'PDLLA 42.5mg + HA 7.5mg'],
-  ['con3-image-b.svg', 'JUVELOOK Volume', 'PDLLA 170mg + HA 30mg'],
-  ['con3-image-c.svg', 'JUVELOOK i', 'PDLLA 25.5mg + HA 4.5mg'],
-  ['con3-image-d.svg', 'JUVELOOK Skin', 'PDLLA 25.5mg + HA 4.5mg'],
-  ['con3-image-e.svg', 'JUVELOOK G', 'PDLLA 170mg + HA 30mg'],
-].map(([image, name, formula]) => `
+  ['con3-image-a.svg', 'con3-hover-juvelook.svg', 'JUVELOOK', 'PDLLA 42.5mg + HA 7.5mg'],
+  ['con3-image-b.svg', 'con3-hover-volume.png', 'JUVELOOK Volume', 'PDLLA 170mg + HA 30mg'],
+  ['con3-image-c.svg', 'con3-hover-i.png', 'JUVELOOK i', 'PDLLA 25.5mg + HA 4.5mg'],
+  ['con3-image-d.svg', 'con3-hover-skin.png', 'JUVELOOK Skin', 'PDLLA 25.5mg + HA 4.5mg'],
+  ['con3-image-e.svg', 'con3-hover-g.png', 'JUVELOOK G', 'PDLLA 170mg + HA 30mg'],
+].map(([image, hoverImage, name, formula]) => `
   <article class="con3-product">
-    <div class="con3-product-image"><img src="/assets/${image}" alt="${name} product vial" />
+    <div class="con3-product-image"><img class="con3-product-base-image" src="/assets/${image}" alt="${name} product vial" /><img class="con3-product-hover-image" src="/assets/${hoverImage}" alt="" />
       <span class="con3-product-corner con3-product-corner-tl"><img src="/assets/con3-box-corner.svg" alt="" /></span>
       <span class="con3-product-corner con3-product-corner-tr"><img src="/assets/con3-box-corner.svg" alt="" /></span>
       <span class="con3-product-corner con3-product-corner-bl"><img src="/assets/con3-box-corner.svg" alt="" /></span>
@@ -51,11 +56,11 @@ app.innerHTML = `
     </header>
     <section class="hero" aria-label="JUVELOOK">
       <div class="hero-title" aria-label="JUVE LOOK">
-        <div class="title-row title-row-top">
+        <div class="title-row title-row-top" data-node-id="228:7416">
           <h1>JUVE</h1>
           <p class="title-note">A Bio-Interactive PDLLA-HA Stimulator</p>
         </div>
-        <div class="title-row title-row-bottom">
+        <div class="title-row title-row-bottom" data-node-id="228:7422">
           <p class="title-note">Advanced Care for Radiant Skin</p>
           <h1>LOOK.</h1>
         </div>
@@ -97,8 +102,8 @@ app.innerHTML = `
         <img class="video-corner corner-top-right" src="/assets/plus.svg" alt="" />
         <img class="video-corner corner-bottom-left" src="/assets/plus.svg" alt="" />
         <img class="video-corner corner-bottom-right" src="/assets/plus.svg" alt="" />
+        <p class="video-caption">Technology &times; Beauty</p>
       </div>
-      <p class="video-caption">Technology &times; Beauty</p>
     </section>
 
     <section class="con1" aria-label="JUVELOOK Volume introduction" data-node-id="228:7347">
@@ -107,7 +112,7 @@ app.innerHTML = `
 
         <div class="con1-intro" data-node-id="228:7359">
           <p class="con1-lead">Juvelook is a scientific approach<br />to skin rejuvenation providing<br />safe and effective you can trust.</p>
-          <h2>JUVELOOK<br />Volume</h2>
+          <h2><span class="con1-underline">JUVELOOK</span><br /><span class="con1-underline">Volume</span></h2>
         </div>
 
         <p class="con1-technology" data-node-id="228:7375">VAIM’s key technology revolves around the creation of PDLLA microparticles.<br />Aqueous PDLLA solution is sprayed into a cold vat to produce our unique porous &amp; reticular microparticles.</p>
@@ -120,18 +125,22 @@ app.innerHTML = `
           <img class="con1-plus con1-plus-bl" src="/assets/con1-plus.svg" alt="" />
           <img class="con1-plus con1-plus-br" src="/assets/con1-plus.svg" alt="" />
           <img class="con1-marker-line con1-marker-top" src="/assets/con1-line-1.svg" alt="" />
-          <img class="con1-marker-line con1-marker-bottom" src="/assets/con1-line.svg" alt="" />
         </div>
 
         <div class="con1-hud-label" data-node-id="267:2680">
           <span><span class="con1-n">N.</span> <span class="con1-percent">%</span></span>
           <span class="con1-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
-          <span>100%</span>
+          <span class="con1-hud-value" data-node-id="249:10368">100%</span>
         </div>
 
         <figure class="con1-microparticle" data-node-id="228:7366">
           <img src="/assets/con1-image-box-1.svg" alt="Microparticles viewed under magnification" />
-          <span class="con1-micro-indicator" data-node-id="228:7401" aria-hidden="true"><img src="/assets/con1-hud.svg" alt="" /></span>
+          <span class="con1-micro-indicator" data-node-id="249:10369" aria-hidden="true">
+            <svg class="con1-hud-shapes" viewBox="0 0 49 49" width="49" height="49" fill="none" shape-rendering="crispEdges">
+              <path d="M11.5 .5H.5v11M.5 37.5v11h11M37.5 48.5h11v-11M48.5 11.5V.5h-11M24.5 17.5v-10M24.5 41.5v-10M32.5 24.5h10M6.5 24.5h10" stroke="#000000" stroke-width="1" stroke-opacity="1" />
+              <rect x="22.5" y="22.5" width="4" height="4" fill="#000000" />
+            </svg>
+          </span>
           <span class="con1-micro-return" aria-hidden="true" data-node-id="228:7382"><img src="/assets/con1-arrow.svg" alt="" /></span>
         </figure>
         <img class="con1-technology-mark" src="/assets/con1-icon-circle.svg" alt="" data-node-id="228:7376" />
@@ -142,13 +151,16 @@ app.innerHTML = `
         </div>
 
         <div class="con1-formula" data-node-id="228:7364">
-          <p>PDLLA 170mg<br />+ HA 30mg</p>
+          <p><span class="con1-underline">PDLLA 170mg</span><br /><span class="con1-underline">+ HA 30mg</span></p>
           <img src="/assets/con1-detail.svg" alt="" />
         </div>
 
         <img class="con1-callout con1-callout-left" src="/assets/con1-line-3.svg" alt="" />
-        <img class="con1-callout con1-callout-bottom" src="/assets/con1-line-2.svg" alt="" />
-        <figure class="con1-molecule" data-node-id="228:7356"><img src="/assets/con1-image-box.svg" alt="Metallic molecular structure illustration" /></figure>
+        <svg class="con1-callout con1-callout-bottom" viewBox="0 0 180 57" aria-hidden="true">
+          <path d="M0 0 44.5 26.4H171.7" fill="none" stroke="#000" stroke-width="1" />
+          <rect x="174.4" y="23.6" width="5.6" height="5.6" fill="#000" />
+        </svg>
+        <figure class="con1-molecule" data-node-id="228:7356"><img src="/assets/con1-molecule.png" alt="Metallic molecular structure illustration" /></figure>
       </div>
     </section>
 
@@ -156,26 +168,28 @@ app.innerHTML = `
       <div class="con2-inner">
         <p class="con2-title" data-node-id="228:7340">JUVELOOK<br />Guide Table</p>
 
-        <div class="con2-labels" aria-hidden="true">
-          <span class="con2-label con2-wrinkles">wrinkles</span>
-          <span class="con2-label con2-fine-lines">fine lines</span>
-          <span class="con2-label con2-skin-elasticity">skin elasticity</span>
-          <span class="con2-label con2-large-pores">large pores</span>
-          <span class="con2-label con2-acne-scars">acne scars</span>
-          <span class="con2-label con2-skin-texture">skin texture</span>
-          <span class="con2-label con2-skin-rejuvenation">skin rejuvenation</span>
-        </div>
+        <div class="con2-orbit" aria-hidden="true">
+          <div class="con2-labels">
+            <span class="con2-label con2-wrinkles"><span>wrinkles</span></span>
+            <span class="con2-label con2-fine-lines"><span>fine lines</span></span>
+            <span class="con2-label con2-skin-elasticity"><span>skin elasticity</span></span>
+            <span class="con2-label con2-large-pores"><span>large pores</span></span>
+            <span class="con2-label con2-acne-scars"><span>acne scars</span></span>
+            <span class="con2-label con2-skin-texture"><span>skin texture</span></span>
+            <span class="con2-label con2-skin-rejuvenation"><span>skin rejuvenation</span></span>
+          </div>
 
-        <div class="con2-circle" aria-hidden="true">
-          <div class="con2-curve con2-curve-a"><img src="/assets/con2-ellipse-a.svg" alt="" /></div>
-          <div class="con2-curve con2-curve-b"><img src="/assets/con2-ellipse-b.svg" alt="" /></div>
-          <i class="con2-point con2-point-1"></i>
-          <i class="con2-point con2-point-2"></i>
-          <i class="con2-point con2-point-3"></i>
-          <i class="con2-point con2-point-4"></i>
-          <i class="con2-point con2-point-5"></i>
-          <i class="con2-point con2-point-6"></i>
-          <i class="con2-point con2-point-7"></i>
+          <div class="con2-circle">
+            <div class="con2-curve con2-curve-a"><img src="/assets/con2-ellipse-a.svg" alt="" /></div>
+            <div class="con2-curve con2-curve-b"><img src="/assets/con2-ellipse-b.svg" alt="" /></div>
+            <i class="con2-point con2-point-1"></i>
+            <i class="con2-point con2-point-2"></i>
+            <i class="con2-point con2-point-3"></i>
+            <i class="con2-point con2-point-4"></i>
+            <i class="con2-point con2-point-5"></i>
+            <i class="con2-point con2-point-6"></i>
+            <i class="con2-point con2-point-7"></i>
+          </div>
         </div>
 
         <p class="con2-value" aria-label="85 percent PDLLA"><span class="con2-value-number">85</span><span class="con2-value-percent">%</span><span class="con2-value-space"> </span><span class="con2-value-name">PDLLA</span></p>
@@ -194,7 +208,7 @@ app.innerHTML = `
     <section class="con3" aria-label="Technology and product lineup" data-node-id="300:7635">
       <div class="con3-inner">
         <h2 class="con3-heading" data-node-id="300:7636">Technology</h2>
-        <p class="con3-lineup-heading" data-node-id="300:7637">Line up</p>
+        <p class="con3-lineup-heading" data-node-id="300:7637" role="button" tabindex="0" aria-pressed="false">Line up</p>
         <div class="con3-intro" data-node-id="300:7638">
           <p data-node-id="300:7639">AIM’s core technology creates PDLLA microparticles.<br /> It powers JUVELOOK’s rejuvenation effects.</p>
           <div class="con3-all" data-node-id="300:7640"><span>all</span><span class="con3-all-arrow"><img src="/assets/con3-arrow.svg" alt="" /></span></div>
@@ -203,7 +217,28 @@ app.innerHTML = `
 
         <aside class="con3-lineup" aria-label="JUVELOOK product lineup" data-node-id="300:7645">
           ${con3Products}
+          <article class="con3-product con3-product-group" aria-hidden="true">
+            <div class="con3-product-image"><img src="/assets/con3-hover-group.png" alt="" />
+              <span class="con3-product-corner con3-product-corner-tl"><img src="/assets/con3-box-corner.svg" alt="" /></span>
+              <span class="con3-product-corner con3-product-corner-tr"><img src="/assets/con3-box-corner.svg" alt="" /></span>
+              <span class="con3-product-corner con3-product-corner-bl"><img src="/assets/con3-box-corner.svg" alt="" /></span>
+              <span class="con3-product-corner con3-product-corner-br"><img src="/assets/con3-box-corner.svg" alt="" /></span>
+            </div>
+          </article>
+          <img class="con3-lineup-line con3-lineup-line-a" src="/assets/con3-hover-line-2.svg" alt="" />
+          <img class="con3-lineup-line con3-lineup-line-b" src="/assets/con3-hover-line-3.svg" alt="" />
+          <img class="con3-lineup-line con3-lineup-line-c" src="/assets/con3-hover-line-4.svg" alt="" />
+          <img class="con3-lineup-line con3-lineup-line-d" src="/assets/con3-hover-line-5.svg" alt="" />
+          <img class="con3-lineup-line con3-lineup-line-e" src="/assets/con3-hover-line-1.svg" alt="" />
         </aside>
+        <div class="con3-lineup-hud con3-lineup-hud-first" aria-hidden="true">
+          <span class="con3-lineup-hud-frost"></span><span class="con3-lineup-hud-overlay"></span><span class="con3-lineup-hud-corners"></span>
+          <div class="con3-lineup-hud-content"><img class="con3-lineup-hud-chain" src="/assets/con3-hover-molecule.svg" alt="" /><p>PDLLA 42.5mg<small>Biodegradable polymeric microparticles</small></p><span class="con3-lineup-hud-rule"></span><img class="con3-lineup-hud-orbit" src="/assets/con3-hover-orbit.svg" alt="" /><p>HA 7.5mg<small>Hyaluronic Acid</small></p><img class="con3-lineup-hud-barcode" src="/assets/con3-hover-barcode.svg" alt="" /></div>
+        </div>
+        <div class="con3-lineup-hud con3-lineup-hud-second" aria-hidden="true">
+          <span class="con3-lineup-hud-frost"></span><span class="con3-lineup-hud-overlay"></span><span class="con3-lineup-hud-corners"></span>
+          <div class="con3-lineup-hud-content"><img class="con3-lineup-hud-chain" src="/assets/con3-hover-molecule.svg" alt="" /><p>PDLLA 25.5mg<small>Biodegradable polymeric microparticles</small></p><span class="con3-lineup-hud-rule"></span><img class="con3-lineup-hud-orbit" src="/assets/con3-hover-orbit.svg" alt="" /><p>HA 4.5mg<small>Hyaluronic Acid</small></p><img class="con3-lineup-hud-barcode" src="/assets/con3-hover-barcode.svg" alt="" /></div>
+        </div>
 
         <div class="con3-top-mini" data-node-id="300:7651">
           <span>Technology</span>
@@ -214,33 +249,73 @@ app.innerHTML = `
 
         <div class="con3-gallery" data-node-id="300:7656">
           <article class="con3-gallery-card con3-structure-card" data-node-id="300:7657">
-            <div class="con3-gallery-image con3-structure-image"><span class="con3-photo-crop"><img src="/assets/con3-naturally-derived.svg" alt="Microparticle structure" /></span>${con3Corners}</div>
+            <div class="con3-gallery-image con3-structure-image"><span class="con3-photo-crop"><img src="/assets/con3-naturally-derived.svg" alt="Microparticle structure" /></span><img class="con3-gallery-hover-image" src="/assets/con3-hover-tech-1.svg" alt="" />${con3Corners}</div>
             <div class="con3-gallery-caption"><p>PDLLA + HA Composite</p><p>Precision-engineered PDLLA microparticles</p></div>
           </article>
 
           <article class="con3-gallery-card con3-spherical-card" data-node-id="300:7712">
-            <div class="con3-gallery-image con3-spherical-image"><span class="con3-photo-crop"><img src="/assets/con3-porous.png" alt="Spherical microparticle" /></span>${con3Corners}</div>
+            <div class="con3-gallery-image con3-spherical-image"><span class="con3-photo-crop"><img src="/assets/con3-porous.png" alt="Spherical microparticle" /></span><img class="con3-gallery-hover-image" src="/assets/con3-hover-tech-2.svg" alt="" />${con3Corners}</div>
             <div class="con3-gallery-caption"><p>Spherical</p></div>
           </article>
 
           <article class="con3-gallery-card con3-porous-card" data-node-id="300:7665">
-            <div class="con3-gallery-image con3-porous-image"><span class="con3-photo-crop"><img src="/assets/con3-corn-source.png" alt="Porous PDLLA microparticle" /></span>${con3Corners}</div>
+            <div class="con3-gallery-image con3-porous-image"><span class="con3-photo-crop"><img src="/assets/con3-corn-source.png" alt="Porous PDLLA microparticle" /></span><img class="con3-gallery-hover-image" src="/assets/con3-hover-tech-3.svg" alt="" />${con3Corners}</div>
             <div class="con3-gallery-caption"><p>Porous&nbsp;&nbsp; High mechanical stability</p></div>
           </article>
 
           <article class="con3-gallery-card con3-network-card" data-node-id="300:7701">
-            <div class="con3-gallery-image con3-network-image"><span class="con3-photo-crop"><img src="/assets/con3-spherical.png" alt="PDLLA molecular network" /></span>${con3Corners}</div>
+            <div class="con3-gallery-image con3-network-image"><span class="con3-photo-crop"><img src="/assets/con3-spherical.png" alt="PDLLA molecular network" /></span><img class="con3-gallery-hover-image" src="/assets/con3-hover-tech-4.svg" alt="" />${con3Corners}</div>
           </article>
 
           <article class="con3-gallery-card con3-corn-card" data-node-id="300:7676">
-            <div class="con3-gallery-image con3-corn-image"><span class="con3-photo-crop"><img src="/assets/con3-pdllaha.png" alt="Naturally derived corn starch material" /></span>${con3Corners}</div>
+            <div class="con3-gallery-image con3-corn-image"><span class="con3-photo-crop"><img src="/assets/con3-pdllaha.png" alt="Naturally derived corn starch material" /></span><img class="con3-gallery-hover-image" src="/assets/con3-hover-tech-5.svg" alt="" />${con3Corners}</div>
             <div class="con3-gallery-caption"><p>100% Naturally Derived</p><p>Made from corn starch</p></div>
           </article>
 
           <article class="con3-gallery-card con3-adhesion-card" data-node-id="300:7687">
-            <div class="con3-gallery-image con3-adhesion-image"><span class="con3-photo-crop"><img src="/assets/con3-cell-adhesion.png" alt="Cell adhesion structure" /></span>${con3Corners}</div>
+            <div class="con3-gallery-image con3-adhesion-image"><span class="con3-photo-crop"><img src="/assets/con3-cell-adhesion.png" alt="Cell adhesion structure" /></span><img class="con3-gallery-hover-image" src="/assets/con3-hover-tech-6.svg" alt="" />${con3Corners}</div>
             <div class="con3-gallery-caption"><p>Improved Cell Adhesion</p><p>Active cell integration and stable pH balance</p></div>
           </article>
+          <img class="con3-connector con3-connector-top" src="/assets/con3-hud-line-2.svg" alt="" />
+          <img class="con3-connector con3-connector-spherical" src="/assets/con3-hud-line-3.svg" alt="" />
+          <img class="con3-connector con3-connector-porous" src="/assets/con3-hud-line-6.svg" alt="" />
+          <img class="con3-connector con3-connector-network" src="/assets/con3-hud-line-4.svg" alt="" />
+          <img class="con3-connector con3-connector-corn" src="/assets/con3-hud-line-5.svg" alt="" />
+          <img class="con3-connector con3-connector-adhesion" src="/assets/con3-hud-line-1.svg" alt="" />
+        </div>
+        <div class="con3-hud con3-hud-composite" data-node-id="228:7690">
+          <span class="con3-hud-frost" aria-hidden="true"></span>
+          <span class="con3-hud-corners" aria-hidden="true"></span>
+          <span class="con3-hud-overlay" aria-hidden="true"></span>
+          <div class="con3-hud-content">
+            <p class="con3-hud-kicker">PDLLA + HA Hybrid<br />Composite formulation</p>
+            <svg class="con3-hud-molecule" viewBox="0 0 190 78" fill="none" aria-hidden="true"><path d="M12 20 30 10 48 20v20L30 50 12 40V20Zm36 0 18-10 18 10v20L66 50 48 40V20Zm36 20 18 10 18-10 18 10 18-10 18 10" stroke="currentColor" stroke-width=".8"/><path d="M30 50v18m36-18v18m108-18v18" stroke="currentColor" stroke-width=".8"/><g fill="currentColor"><rect x="8" y="16" width="7" height="7"/><rect x="26" y="6" width="7" height="7"/><rect x="62" y="6" width="7" height="7"/><rect x="26" y="65" width="7" height="7"/><rect x="62" y="65" width="7" height="7"/><rect x="171" y="65" width="7" height="7"/></g></svg>
+            <div class="con3-hud-reading"><span>PDLLA<small>Biodegradable polymeric microparticles</small></span><span>HA<small>Hyaluronic Acid</small></span></div>
+          </div>
+        </div>
+        <div class="con3-hud con3-hud-spherical" data-node-id="228:7692">
+          <span class="con3-hud-frost" aria-hidden="true"></span>
+          <span class="con3-hud-corners" aria-hidden="true"></span>
+          <span class="con3-hud-overlay" aria-hidden="true"></span>
+          <div class="con3-hud-content"><p class="con3-hud-copy">Outer shape - Spherical<br />Surface - Multiple micropores<br />Inner structure - Reticular / Porous network</p><div class="con3-hud-sphere-row"><span class="con3-hud-sphere" aria-hidden="true"></span><span class="con3-hud-dots"></span><span class="con3-hud-sphere-label">360°<br />SPHERICAL SHAPE</span></div></div>
+        </div>
+        <div class="con3-hud con3-hud-volume" data-node-id="228:7694">
+          <span class="con3-hud-frost" aria-hidden="true"></span>
+          <span class="con3-hud-corners" aria-hidden="true"></span>
+          <span class="con3-hud-overlay" aria-hidden="true"></span>
+          <div class="con3-hud-content"><p class="con3-hud-volume-title">Particle Volume at Same Weight</p><div class="con3-hud-volume-chart"><p>PLLA (Solid)</p><span class="con3-hud-volume-bars con3-hud-volume-bars-solid"><i></i><i></i><i></i><i></i><i></i></span><p>PDLLA (Porous)</p><span class="con3-hud-volume-bars con3-hud-volume-bars-porous"><i></i><i></i><i></i><i></i><i></i><small>Several-fold higher</small></span></div></div>
+        </div>
+        <div class="con3-hud con3-hud-derived" data-node-id="228:7696">
+          <span class="con3-hud-frost" aria-hidden="true"></span>
+          <span class="con3-hud-corners" aria-hidden="true"></span>
+          <span class="con3-hud-overlay" aria-hidden="true"></span>
+          <div class="con3-hud-content"><div class="con3-hud-stat"><p>▪&nbsp; STATISTICS</p><div class="con3-hud-ring"><span>100%</span></div><small>NATURALLY DERIVED</small></div><div class="con3-hud-process"><p>▪&nbsp; FROM CORN STARCH TO PDLLA</p><div class="con3-hud-process-grid"><span>Corn starch</span><span>glucose</span><span>PDLLA</span><span>lactic acid</span></div></div></div>
+        </div>
+        <div class="con3-hud con3-hud-proliferation" data-node-id="228:7698">
+          <span class="con3-hud-frost" aria-hidden="true"></span>
+          <span class="con3-hud-corners" aria-hidden="true"></span>
+          <span class="con3-hud-overlay" aria-hidden="true"></span>
+          <div class="con3-hud-content"><p>▪&nbsp; 7-Day Cell Proliferation</p><div class="con3-hud-bar"><span>Porous PDLLA</span><i></i></div><div class="con3-hud-bar"><span>PES</span><i></i></div><div class="con3-hud-bar"><span>Glass</span><i></i></div></div>
         </div>
       </div>
     </section>
@@ -306,4 +381,16 @@ app.innerHTML = `
 `
 
 const disposeHeroMetal = mountHeroMetal(document.querySelector('.hero-image-box'))
-if (import.meta.hot) import.meta.hot.dispose(disposeHeroMetal)
+const disposeHeroMetrics = mountHeroMetrics(document.querySelector('.hero'))
+const disposeCon1Motion = mountCon1Motion(document.querySelector('.con1'))
+const disposeCon3Motion = mountCon3Motion(document.querySelector('.con3'))
+const disposeCon3Lineup = mountCon3Lineup(document.querySelector('.con3'))
+const disposeCon4Stats = mountCon4Stats(document.querySelector('.con4'))
+if (import.meta.hot) import.meta.hot.dispose(() => {
+  disposeHeroMetal()
+  disposeHeroMetrics()
+  disposeCon1Motion()
+  disposeCon3Motion()
+  disposeCon3Lineup()
+  disposeCon4Stats()
+})
