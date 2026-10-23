@@ -22,13 +22,15 @@ const con3Corners = `
   <span class="con3-corner con3-corner-br"><img src="/assets/con3-box-corner.svg" alt="" /></span>
 `
 
-const con3Products = [
+const con3ProductData = [
   ['con3-image-a.svg', 'con3-hover-juvelook.svg', 'JUVELOOK', 'PDLLA 42.5mg + HA 7.5mg'],
   ['con3-image-b.svg', 'con3-hover-volume.png', 'JUVELOOK Volume', 'PDLLA 170mg + HA 30mg'],
   ['con3-image-c.svg', 'con3-hover-i.png', 'JUVELOOK i', 'PDLLA 25.5mg + HA 4.5mg'],
   ['con3-image-d.svg', 'con3-hover-skin.png', 'JUVELOOK Skin', 'PDLLA 25.5mg + HA 4.5mg'],
   ['con3-image-e.svg', 'con3-hover-g.png', 'JUVELOOK G', 'PDLLA 170mg + HA 30mg'],
-].map(([image, hoverImage, name, formula]) => `
+]
+
+const con3Products = con3ProductData.map(([image, hoverImage, name, formula]) => `
   <article class="con3-product">
     <div class="con3-product-image"><img class="con3-product-base-image" src="/assets/${image}" alt="${name} product vial" /><img class="con3-product-hover-image" src="/assets/${hoverImage}" alt="" />
       <span class="con3-product-corner con3-product-corner-tl"><img src="/assets/con3-box-corner.svg" alt="" /></span>
@@ -231,15 +233,27 @@ app.innerHTML = `
           <img class="con3-lineup-line con3-lineup-line-d" src="/assets/con3-hover-line-5.svg" alt="" />
           <img class="con3-lineup-line con3-lineup-line-e" src="/assets/con3-hover-line-1.svg" alt="" />
         </aside>
-        <div class="con3-lineup-hud con3-lineup-hud-first" aria-hidden="true">
-          <span class="con3-lineup-hud-frost"></span><span class="con3-lineup-hud-overlay"></span><span class="con3-lineup-hud-corners"></span>
-          <div class="con3-lineup-hud-content"><img class="con3-lineup-hud-chain" src="/assets/con3-hover-molecule.svg" alt="" /><p>PDLLA 42.5mg<small>Biodegradable polymeric microparticles</small></p><span class="con3-lineup-hud-rule"></span><img class="con3-lineup-hud-orbit" src="/assets/con3-hover-orbit.svg" alt="" /><p>HA 7.5mg<small>Hyaluronic Acid</small></p><img class="con3-lineup-hud-barcode" src="/assets/con3-hover-barcode.svg" alt="" /></div>
-        </div>
-        <div class="con3-lineup-hud con3-lineup-hud-second" aria-hidden="true">
-          <span class="con3-lineup-hud-frost"></span><span class="con3-lineup-hud-overlay"></span><span class="con3-lineup-hud-corners"></span>
-          <div class="con3-lineup-hud-content"><img class="con3-lineup-hud-chain" src="/assets/con3-hover-molecule.svg" alt="" /><p>PDLLA 25.5mg<small>Biodegradable polymeric microparticles</small></p><span class="con3-lineup-hud-rule"></span><img class="con3-lineup-hud-orbit" src="/assets/con3-hover-orbit.svg" alt="" /><p>HA 4.5mg<small>Hyaluronic Acid</small></p><img class="con3-lineup-hud-barcode" src="/assets/con3-hover-barcode.svg" alt="" /></div>
-        </div>
-
+        ${[
+          ['300:9688', 961, 706, 0],
+          ['322:2847', 674, 1469, 2],
+          ['322:2515', 1445, 1110, 1],
+          ['322:3013', 1146, 1971, 3],
+          ['322:3179', 1385, 2640, 4],
+        ].map(([nodeId, left, top, productIndex]) => { const [pdlla, ha] = con3ProductData[productIndex][3].split(' + ').map(ingredient => ingredient.split(' ')[1]); return `
+          <div class="con3-lineup-hud" data-node-id="${nodeId}" style="left: ${left}px; top: ${top}px" aria-hidden="true">
+            <span class="con3-lineup-hud-frost"></span>
+            <span class="con3-lineup-hud-overlay"></span>
+            <span class="con3-lineup-hud-corners">${['tl', 'tr', 'bl', 'br'].map(corner => `<span class="con3-lineup-hud-corner con3-lineup-hud-corner-${corner}"><img src="/assets/con3-hud-corner-${corner}.svg" alt="" /></span>`).join('')}</span>
+            <div class="con3-lineup-hud-content">
+              <img class="con3-lineup-hud-chain" src="/assets/con3-hover-molecule.svg" alt="" />
+              <p>PDLLA <strong>${pdlla}</strong><small>Biodegradable polymeric microparticles</small></p>
+              <span class="con3-lineup-hud-rule"></span>
+              <img class="con3-lineup-hud-orbit" src="/assets/con3-hover-orbit.svg" alt="" />
+              <p>HA <strong>${ha}</strong><small>Hyaluronic Acid</small></p>
+              <img class="con3-lineup-hud-barcode" src="/assets/con3-hover-barcode.svg" alt="" />
+            </div>
+          </div>
+        `}).join('')}
         <div class="con3-top-mini" data-node-id="300:7651">
           <span>Technology</span>
           <span class="con3-mini-divider"><img src="/assets/con3-line-a.svg" alt="" /></span>
